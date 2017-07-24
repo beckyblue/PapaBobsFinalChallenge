@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PapaBobsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+    <Property Name="Crust" Type="int" Nullable="false" />
+    <Property Name="Sausage" Type="bit" Nullable="false" />
+    <Property Name="Pepperoni" Type="bit" Nullable="false" />
+    <Property Name="GreenPeppers" Type="bit" Nullable="false" />
+    <Property Name="Onions" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalCost" Type="smallmoney" Nullable="false" />
+    <Property Name="PaymentType" Type="int" Nullable="false" />
+    <Property Name="Completed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PizzaPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SmallSizeCost" Type="smallmoney" Nullable="false" />
+    <Property Name="MediumSizeCost" Type="smallmoney" Nullable="false" />
+    <Property Name="LargeSizeCost" Type="smallmoney" Nullable="false" />
+    <Property Name="ThickCrustCost" Type="smallmoney" Nullable="false" />
+    <Property Name="ThinCrustCost" Type="smallmoney" Nullable="false" />
+    <Property Name="RegularCrustCost" Type="smallmoney" Nullable="false" />
+    <Property Name="SausageCost" Type="smallmoney" Nullable="false" />
+    <Property Name="PepperoniCost" Type="smallmoney" Nullable="false" />
+    <Property Name="OnionsCost" Type="smallmoney" Nullable="false" />
+    <Property Name="GreenPeppersCost" Type="smallmoney" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PapaBobsModelStoreContainer">
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PizzaPrice" EntityType="Self.PizzaPrice" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
